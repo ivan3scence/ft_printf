@@ -25,7 +25,7 @@ static int	ft_digits(int n)
 	return (count);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long int n)
 {
 	char		*str;
 	long int	i;

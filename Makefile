@@ -12,9 +12,13 @@ NAME = libftprintf.a
 
 # LIBFTDIR = ./libft
 
-SOURCES = ft_printf1.c
+SOURCES = ft_printf_bonus.c
+
+SOURCES_BONUS = ft_printf_bonus.c
 
 OBJS = $(patsubst %.c, %.o, ${SOURCES})
+
+OBJS_BONUS = $(patsubst %.c, %.o, ${SOURCES_BONUS})
 
 all:	 ${NAME}
 
@@ -24,10 +28,13 @@ all:	 ${NAME}
 ${NAME}:	${OBJS}
 	ar rcs ${NAME} $?
 
+bonus:	${OBJS_BONUS}
+	ar rcs ${NAME} $?
+
 clean:
-	${RM} -f ${OBJS}
+	${RM} ${OBJS}
 
 fclean:		clean
-	${RM} -f ${NAME}
+	${RM} ${NAME}
 
 re:	fclean all

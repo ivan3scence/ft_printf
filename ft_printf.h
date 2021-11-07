@@ -17,5 +17,12 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 
+typedef struct s_lis
+{
+	char	*flags;
+	int		width;
+	int		precision;
+	int		pwidth;
+}	t_lis;
 int	ft_printf(const char *format, ...);
 #endif
