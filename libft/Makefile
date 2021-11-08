@@ -20,7 +20,7 @@ HEADERS_FILES = libft.h
 
 HEADERS = ${addprefix ${HEADERS_DIR}, ${HEADERS_FILES}}
 
-CC = gcc
+CC = cc
 
 RM = rm -f
 
@@ -46,7 +46,7 @@ DFILES = $(patsubs %.c,%.d,${SOURCES})
 all:	${NAME}
 
 %.o :	%.c ${HEADERS}
-	${CC} -c ${CFLAGS} $< ${INCLUDE} -o ${<:.c=.o}
+	${CC} -c ${CFLAGS} $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
 	ar rcs ${NAME} $?
