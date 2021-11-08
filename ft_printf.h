@@ -15,7 +15,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include "libft/libft.h"
 
 typedef struct s_lis
 {
@@ -47,5 +46,13 @@ int			ft_argument(char sym, va_list ap, t_lis *list);
 int			ft_discharge(int nbr);
 char		*ft_check_flags(const char *str);
 t_lis		*ft_list(const char *str);
-void		ft_dellist(t_lis *list);;
+void		ft_dellist(t_lis *list);
+int			ft_putstr_fd(char *s, int fd);
+int			ft_putnbr_fd(int n, int fd);
+int			ft_putchar_fd(char c, int fd);
+int			ft_strchr(const char *s, int c);
+char		*ft_strjoin(char const *s1, char const	*s2);
+size_t		ft_strlen(const char *str);
+char		*ft_itoa(long int n);
+int			ft_atoi(const char *str);
 #endif

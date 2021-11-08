@@ -8,15 +8,10 @@ RM = rm -f
 
 NAME = libftprintf.a 
 
-LIBRARY = libft.a
-
-LIBDIR = ./libft
-
-LIB = $(addprefix ${LIBDIR}/, ${LIBRARY})
-
-SRC = ft_printf_c.c ft_printf_i.c ft_printf_u.c\
-		ft_printf_x.c ft_printf_p.c ft_printf_utils.c\
-		ft_printf_lis.c ft_printf_s.c
+SRC = ft_printf_c_bonus.c ft_printf_i_bonus.c ft_printf_u_bonus.c\
+		ft_printf_x_bonus.c ft_printf_p_bonus.c ft_printf_utils_bonus.c\
+		ft_printf_lis_bonus.c ft_printf_s_bonus.c ft_printf_utils2_bonus.c\
+		ft_printf_utils3_bonus.c
 
 SRCWD = $(addprefix src/, ${SRC})
 
@@ -30,7 +25,7 @@ OBJS_BONUS = $(patsubst %.c, %.o, ${SOURCES_BONUS})
 
 .PHONY:	clean all bonus fclean re
 
-all:	 ${LIB} ${NAME}
+all:	 ${NAME}
 
 %.o :	%.c ${HEADERS}
 	${CC} -c ${CFLAGS} $< -o ${<:.c=.o}
@@ -38,18 +33,13 @@ all:	 ${LIB} ${NAME}
 ${NAME}:	${OBJS}
 	ar rcs ${NAME} $?
 
-${LIB}:
-	${MAKE} -C ${LIBDIR}
-
 bonus:	${OBJS_BONUS}
 	ar rcs ${NAME} $?
 
 clean:
 	${RM} ${OBJS}
-	${MAKE} clean -C ${LIBDIR}
 
 fclean:		clean
 	${RM} ${NAME}
-	${RM} ${LIB}
 
 re:	fclean all
